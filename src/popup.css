@@ -1,0 +1,48 @@
+body {
+  width: 20rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin: 1rem 0;
+}
+
+li {
+  padding: 0.25rem;
+}
+li:nth-child(odd) {
+  background: #80808030;
+}
+li:nth-child(even) {
+  background: #ffffff;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+label {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+span {
+  flex: 1 1 auto;
+}
+  
+.multiline {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.project-name {
+  font-weight: bold;
+}
+

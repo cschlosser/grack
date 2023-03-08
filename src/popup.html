@@ -1,0 +1,45 @@
+<!--
+Copyright (C) 2023 Christoph Schlosser
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA. Also add information on how to contact you by electronic and paper mail.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <template id="project_template">
+      <label class="project">
+      <input type="radio" name="project" value="" />
+      <span class="multiline">
+          <span class="project-name"></span>
+          <span class="tracked-time"></span>
+      </span>
+      </label>
+    </template>
+
+    <h1>Time tracker</h1>
+    <div id="projects"></div>
+
+    <button id="start_tracking_btn">Start</button>
+    <button id="stop_tracking_btn" disabled>Stop</button>
+    <button id="remove_project_btn">Remove project</button>
+    <button id="reset_project_btn">Reset time</button>
+    <hr/>
+    <div>
+      <p>Currently elapsed: </p>
+      <p id="current_period"></p>
+    </div>
+
+    <hr/>
+    <input id="new_project_name"></input>
+    <button id="add_project_btn">Add project</button>
+
+    <script src="./popup.js" type="module"></script>
+  </body>
+</html>
