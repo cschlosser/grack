@@ -1,0 +1,19 @@
+kind: pipeline
+name: default
+
+steps:
+- name: git-push
+  image: registry.suse.com/bci/bci-base:latest
+  environment:
+    SSH_KEY:
+      from_secret: ssh_key
+  commands:
+    - zypper -n install git
+    - echo "$SSH_KEY" > /tmp/ssh-key
+    - chmod 0600 /tmp/ssh-key
+    - git remote add github "git@github.com:cschlosser/grack.git"
+    - GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /tmp/ssh-key" git push -f github master:main
+    - rm -rf /tmp/ssh-key
+  when:
+    branch:
+    - master
